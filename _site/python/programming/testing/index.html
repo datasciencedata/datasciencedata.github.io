@@ -1,0 +1,559 @@
+<!doctype html>
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Python NetworkX Module - Sheikh Hanif</title>
+<meta name="description" content="NetworkX is a Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks. It has powerful data structures for graphs, digraphs and multigraph and so on.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Sheikh Hanif">
+<meta property="og:title" content="Python NetworkX Module">
+<meta property="og:url" content="http://localhost:4000/python/programming/testing/">
+
+
+  <meta property="og:description" content="NetworkX is a Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks. It has powerful data structures for graphs, digraphs and multigraph and so on.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-02-10T00:00:00+08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/python/programming/testing/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sheikh Hanif",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="wUEM5ESsba1PFb5GUnJKlTmwAKBy_O76lOJ71GUOWwc" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sheikh Hanif Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1252788036006577",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+   
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><a href="/"><img class="site-masthead" src="/assets/images/logo.png" alt="Sheikh Hanif" /></a><ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/data-science/" >Data Science</a>
+            </li><li class="masthead__menu-item">
+              <a href="/python/" >Python</a>
+            </li><li class="masthead__menu-item">
+              <a href="/project/" >Project</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/bio.jpg" alt="Sheikh Hanif" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Sheikh Hanif</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        Data Science
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Kuala Lumpur, MY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:sheikhhanifhossain@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/sheikhhanif" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+          
+            <li><a href="https://linkedin.com/in/sheikhhanif" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+      
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Python NetworkX Module">
+    <meta itemprop="description" content="What is it that neural networks actually learn?">
+    <meta itemprop="datePublished" content="February 10, 2019">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Python NetworkX Module
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <h3 id="what-is-it-that-neural-networks-actually-learn">What is it that neural networks actually learn?</h3>
+
+<p><img src="videos/what_nns_learn/hyperbolic_tangent_3-layer_2-input_1-output_plots.gif" alt="" /></p>
+
+<p>Neural networks are famously difficult to interpret. It’s hard to know what they are actually learning when we train them. Let’s take a closer look and see whether we can build a good picture of what’s going on inside.</p>
+
+<p>Just like every other supervised machine learning model, neural networks learn relationships between input variables and output variables. In fact, we can even see how it’s related to the most iconic model of all, linear regression.</p>
+
+<h3 id="linear-regression">Linear regression</h3>
+
+<p>Linear regression assumes a straight line relationship between an input variable <em>x</em> and an output variable <em>y</em>. <em>x</em> is multiplied by a constant, <em>m</em>, which also happens to be the slope of the line, and it’s added to another constant, <em>b</em>, which happens to be where the line crosses the <em>y</em> axis.</p>
+
+<p><img src="/assets/images/what_nns_learn/eqn_100.png" alt="" /></p>
+
+<p>We can represent this in a picture. Our input value <em>x</em> is multiplied by <em>m</em>. Our constant <em>b</em>, is multiplied by one. And then they are added together to get <em>y</em>. This is a graphical representation of <em>y</em> equals <em>mx</em> plus <em>b</em>.</p>
+
+<p><img src="/assets/images/what_nns_learn/drawing_100.png" alt="" /></p>
+
+<p>On the far left the circular symbols just indicate that the value is passed through. The rectangles labeled <em>m</em> and <em>b</em> indicate that whatever goes in on the left comes out multiplied By <em>m</em> or <em>b</em> on the right. And the box with the capital sigma indicates that whatever goes in on the left gets added together and spit back out on the right.</p>
+
+<p>We can change the names of all the symbols for a different representation.</p>
+
+<p><img src="/assets/images/what_nns_learn/eqn_110.png" alt="" /></p>
+
+<p><img src="/assets/images/what_nns_learn/drawing_110.png" alt="" /></p>
+
+<p>This is still a straight line relationship. We have just changed the names of all the variables. The reason we’re doing this is to translate our linear regression into the notation we use in neural networks. This will help us keep track of things as we move forward.</p>
+
+<p>At this point, we have turned a straight line equation into a network. A network is anything that has nodes connected by edges. In this case <em>x_0</em> and <em>x_1</em> are our input nodes, <em>v_0</em> is an output node, and our weights connecting them are edges. The mathematical term for a construct like this is a graph. This is not the traditional sense of a graph, meaning a plot, or a grid like in a graphing calculator or graph paper. It’s just the formal word for a network, for nodes connected by edges. Another piece of terminology you might hear is <em>directed acyclic graph</em>, abbreviated as DAG. A directed graph is one where the edges just go in one direction. In our case, input goes to output, but output never goes back to input. Our edges are directed. Acyclic means that you can’t ever draw a loop. Once you have visited a node, there is no way to jump from edges to nodes to get back to where you started. Everything flows in one direction through the graph.</p>
+
+<p>We can get a sense of the type of models that this network is capable of learning by choosing random values for the weights, <em>w_00</em> and <em>w_10</em>, then seeing what relationships pop out between <em>x_1</em> and <em>v_0</em>. Remember that we set <em>x_0</em> to 1 and are holding it there always. It is a special node called the bias node.</p>
+
+<p><img src="/assets/videos/what_nns_learn/linear_1-layer_1-input_1-output_plots.gif" alt="" /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#programming" class="page__taxonomy-item" rel="tag">programming</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#python" class="page__taxonomy-item" rel="tag">python</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-02-10T00:00:00+08:00">February 10, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Python+NetworkX+Module%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fprogramming%2Ftesting%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fprogramming%2Ftesting%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fprogramming%2Ftesting%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2Fprogramming%2Ftesting%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/Visualizing-Malaysia-Public-University-Geo-data-Using-Folium/" class="pagination--pager" title="Analyzing Geo-data Using Folium
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a comment</h4>
+      <section class="fb-comments" data-href="http://localhost:4000/python/programming/testing/" data-mobile="true" data-num-posts="5" data-width="100%" data-colorscheme="light"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+
+  
+  
+    
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+    
+    
+    
+  
+  
+
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <input type="text" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    </form>
+    <div id="results" class="results">
+        <gcse:searchresults-only></gcse:searchresults-only>    
+    </div></div>
+
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+          <li><a href="https://linkedin.com/in/sheikhhanif" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
+        
+      
+        
+          <li><a href="https://github.com/sheikhhanif" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 Sheikh Hanif</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.6.0/js/all.js" integrity="sha384-z9ZOvGHHo21RqN5De4rfJMoAxYpaVoiYhuJXPyVmSs8yn20IE3PmBM534CffwSJI" crossorigin="anonymous"></script>
+
+
+<script>
+  (function () {
+    var cx = '008072173451302764783:oel8ke2p0x0';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+
+
+
+    
+
+  </body>
+</html>
